@@ -1,3 +1,5 @@
+// made this variable global for convinience -> may end up making it
+// local to img-array iteration function
 
 $(document).ready(
 	function(){
@@ -15,15 +17,22 @@ $(document).ready(
 			$(".outer-lightbox").css({"display": "none"})
 		});
 
-		// creating a seperate link that iterates through an array of images
-		var imgarray = ["monkeyteeth.jpg", "randomimage.jpg"]
+		// have to set this counter outside the function, else it will reset every time i click
+		var i = 0
 		$(".next-iteration").on("click", function(e){
+			// prevent default is needed to avoid link taking us to a new page
+			e.preventDefault();
+			// testing to make sure this function is running
 			alert("you triggered the next iteration")
-			// var i = 0
-			// i+=1
-			// if i > imgarray.length {
-			// i = 0}
-			// $("#this-image").html("<img id="this-image" src=imgs/"+imagearray[i]+">")}
+			// array of images to cycle through
+			var imgarray = ["'imgs/monkeyteeth.jpg'", "'imgs/catsmile.jpg'", "'imgs/itsaparty.jpg'", "'imgs/hippoanddog.jpg'"]
+			 // increments to move through the array
+			i+=1
+			// if you reach the end of the array, move back to the first object in the array
+			if (i == imgarray.length) {
+			i = 0}
+			// this .html() changes the content INSIDE of the inner-lightbox div
+			$(".inner-lightbox").html( "<img id='this-image' src=" + imgarray[i] + ">" )
 		});
 
 		// create an array of images
