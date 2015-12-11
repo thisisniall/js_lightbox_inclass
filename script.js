@@ -1,3 +1,4 @@
+
 $(document).ready(
 	function(){
 		$(".lightbox-link").on("click", function(e){
@@ -13,5 +14,19 @@ $(document).ready(
 		$(".outer-lightbox").on("click", function(){
 			$(".outer-lightbox").css({"display": "none"})
 		});
+
+		// creating a seperate link that iterates through an array of images
+		var imgarray = ["monkeyteeth.jpg", "randomimage.jpg"]
+		$(".next-iteration").on("click", function(e){
+			alert("you triggered the next iteration")
+			// var i = 0
+			// i+=1
+			// if i > imgarray.length {
+			// i = 0}
+			// $("#this-image").html("<img id="this-image" src=imgs/"+imagearray[i]+">")}
+		});
+
+		// create an array of images
 	}
 );
+
