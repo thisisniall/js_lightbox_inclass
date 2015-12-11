@@ -10,7 +10,13 @@
 
 .inner-lightbox {
 	margin: 0 auto;
-	max-width: 500px;
+	max-width: 99%;
 	margin-top: 30vh;
 }
 
+img {
+	display: block;
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
